@@ -16,6 +16,124 @@
 using namespace std;
 
 /**
+ * @brief Prints the elements of a vector of integers.
+ *
+ * This function takes a constant reference to a vector of integers and prints
+ * each element followed by a space. After printing all elements, it outputs a
+ * newline character.
+ *
+ * @param v The vector of integers to be printed.
+ */
+void print_vector(const vector<int> &v) {
+  cout << '\n';
+  for (const auto &elem : v) {
+    cout << elem << ' ';
+  }
+  cout << '\n';
+}
+
+/**
+ * @brief Prints the elements of a vector of strings to the standard output.
+ *
+ * This function takes a constant reference to a vector of strings and prints
+ * each element followed by a space. After printing all elements, it outputs
+ * a newline character.
+ *
+ * @param v A constant reference to a vector of strings to be printed.
+ */
+void print_vector(const vector<string> &v) {
+  cout << '\n';
+  for (const auto &elem : v) {
+    cout << elem << ' ';
+  }
+  cout << '\n';
+}
+
+/**
+ * @brief Prints the contents of a vector of pairs.
+ *
+ * This function takes a constant reference to a vector of pairs, where each
+ * pair consists of an integer and a string. It iterates through the vector and
+ * prints each pair's integer and string to the standard output.
+ *
+ * @param v A constant reference to a vector of pairs (int, string) to be
+ * printed.
+ */
+void print_vector(const vector<pair<int, string>> &v) {
+  cout << '\n';
+  for (const auto &elem : v) {
+    cout << elem.first << ": " << elem.second << '\n';
+  }
+}
+
+/**
+ * @brief Prints a 2D vector of integers to the standard output.
+ *
+ * This function takes a constant reference to a 2D vector of integers and
+ * prints its elements to the standard output. Each inner vector's elements
+ * are printed on a single line, separated by spaces. Each inner vector is
+ * printed on a new line.
+ *
+ * @param v A constant reference to a 2D vector of integers to be printed.
+ */
+void print_vector(const vector<vector<int>> &v) {
+  cout << '\n';
+  for (const auto &elem : v) {
+    for (const auto &inner_elem : elem) {
+      cout << inner_elem << ' ';
+    }
+    cout << '\n';
+  }
+}
+
+/**
+ * @brief Demonstrates basic vector creation and initialization in C++.
+ *
+ * This function showcases various ways to create and initialize vectors:
+ * - Creating a vector of integers and printing it.
+ * - Creating a vector of strings and printing it.
+ * - Creating a vector of pairs (int, string) and printing it.
+ * - Creating a vector of vectors of integers and printing it.
+ * - Creating a vector of integers with 10 elements, all initialized to 0, and
+ * printing it.
+ * - Creating a vector of integers with 10 elements, all initialized to 1, and
+ * printing it.
+ * - Initializing a vector of integers with the elements of another vector and
+ * printing it.
+ * - Initializing a vector of integers with the elements of an array and
+ * printing it.
+ */
+void basic_vector_creation() {
+  // Create a vector of integers
+  vector<int> numbers = {1, 2, 3, 4, 5};
+  print_vector(numbers);
+  // create a vector of strings
+  vector<string> strings = {"one", "two", "three"};
+  print_vector(strings);
+  // Create a vector of pairs
+  vector<pair<int, string>> pairs = {{1, "one"}, {2, "two"}, {3, "three"}};
+  print_vector(pairs);
+  // Create a vector of vectors
+  vector<vector<int>> vectors = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+  print_vector(vectors);
+
+  // Create a vector of integers with 10 elements, all initialized to 0
+  vector<int> zeros(10);
+  print_vector(zeros);
+  // Create a vector of integers with 10 elements, all initialized to 1
+  vector<int> ones(10, 1);
+  print_vector(ones);
+
+  // Initialize a vector of integers with the elements of another vector
+  vector<int> copy(numbers);
+  print_vector(copy);
+  // Initialize a vector of integers with the elements of an array
+  int arr[] = {1, 2, 3, 4, 5};
+  vector<int> from_array(arr, arr + 5);
+  print_vector(from_array);
+}
+
+/**
  * @brief Demonstrates basic initialization and usage of a std::vector of
  strings.
  *
@@ -126,16 +244,17 @@ void basic_vector_resize() {
 
 /**
  * @brief Entry point of the program.
- * 
+ *
  * This function initializes and resizes a basic vector by calling
  * the functions `basic_vector_init` and `basic_vector_resize`.
  * It then waits for the user to press ENTER before exiting.
- * 
+ *
  * @return int Returns 0 upon successful execution.
  */
 int main() {
   basic_vector_init();
   basic_vector_resize();
+  basic_vector_creation();
 
   // Wait for user to press ENTER
   system("pause");
