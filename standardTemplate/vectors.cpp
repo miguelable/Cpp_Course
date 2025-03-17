@@ -24,9 +24,10 @@ using namespace std;
  *
  * @param v The vector of integers to be printed.
  */
-void print_vector(const vector<int> &v) {
+void print_vector(const vector<int>& v)
+{
   cout << '\n';
-  for (const auto &elem : v) {
+  for (const auto& elem : v) {
     cout << elem << ' ';
   }
   cout << '\n';
@@ -41,9 +42,10 @@ void print_vector(const vector<int> &v) {
  *
  * @param v A constant reference to a vector of strings to be printed.
  */
-void print_vector(const vector<string> &v) {
+void print_vector(const vector<string>& v)
+{
   cout << '\n';
-  for (const auto &elem : v) {
+  for (const auto& elem : v) {
     cout << elem << ' ';
   }
   cout << '\n';
@@ -59,9 +61,10 @@ void print_vector(const vector<string> &v) {
  * @param v A constant reference to a vector of pairs (int, string) to be
  * printed.
  */
-void print_vector(const vector<pair<int, string>> &v) {
+void print_vector(const vector<pair<int, string>>& v)
+{
   cout << '\n';
-  for (const auto &elem : v) {
+  for (const auto& elem : v) {
     cout << elem.first << ": " << elem.second << '\n';
   }
 }
@@ -76,10 +79,11 @@ void print_vector(const vector<pair<int, string>> &v) {
  *
  * @param v A constant reference to a 2D vector of integers to be printed.
  */
-void print_vector(const vector<vector<int>> &v) {
+void print_vector(const vector<vector<int>>& v)
+{
   cout << '\n';
-  for (const auto &elem : v) {
-    for (const auto &inner_elem : elem) {
+  for (const auto& elem : v) {
+    for (const auto& inner_elem : elem) {
       cout << inner_elem << ' ';
     }
     cout << '\n';
@@ -103,7 +107,8 @@ void print_vector(const vector<vector<int>> &v) {
  * - Initializing a vector of integers with the elements of an array and
  * printing it.
  */
-void basic_vector_creation() {
+void basic_vector_creation()
+{
   // Create a vector of integers
   vector<int> numbers = {1, 2, 3, 4, 5};
   print_vector(numbers);
@@ -128,7 +133,7 @@ void basic_vector_creation() {
   vector<int> copy(numbers);
   print_vector(copy);
   // Initialize a vector of integers with the elements of an array
-  int arr[] = {1, 2, 3, 4, 5};
+  int         arr[] = {1, 2, 3, 4, 5};
   vector<int> from_array(arr, arr + 5);
   print_vector(from_array);
 }
@@ -155,7 +160,8 @@ void basic_vector_creation() {
  reserve enough capacity for the vector when you create it, if you know how many
  elements you're going to store in it.
  */
-void basic_vector_init() {
+void basic_vector_init()
+{
   // Create a vector of strings
   vector<string> strings;
 
@@ -169,21 +175,19 @@ void basic_vector_init() {
   cout << "Capacity of strings: " << strings.capacity() << '\n';
   // Iterate over the vector and print each string
   cout << "\nIteration over strings using range-based for loop:" << '\n';
-  for (const auto &str : strings) {
+  for (const auto& str : strings) {
     cout << str << '\n';
   }
 
   // Iterate over the vector using an iterator
   cout << "\nIteration over strings using iterator:" << '\n';
-  for (vector<string>::iterator it = strings.begin(); it != strings.end();
-       ++it) {
+  for (vector<string>::iterator it = strings.begin(); it != strings.end(); ++it) {
     cout << *it << '\n';
   }
 
   // Iterate over the vector using a reverse iterator
   cout << "\nIteration over strings using reverse iterator:" << '\n';
-  for (vector<string>::reverse_iterator it = strings.rbegin();
-       it != strings.rend(); ++it) {
+  for (vector<string>::reverse_iterator it = strings.rbegin(); it != strings.rend(); ++it) {
     cout << *it << '\n';
   }
 }
@@ -201,8 +205,9 @@ void basic_vector_init() {
  * - Reserves memory for 100000 elements and displays its size and capacity.
  * - Shrinks the vector to fit its size and displays its size and capacity.
  */
-void basic_vector_resize() {
-  vector<int> numbers;
+void basic_vector_resize()
+{
+  vector<int>            numbers;
   vector<int>::size_type capacity = numbers.capacity();
 
   cout << "\nSize and Capacity of an empty vector" << '\n';
@@ -242,6 +247,12 @@ void basic_vector_resize() {
   cout << "Capacity: " << numbers.capacity() << '\n';
 }
 
+void basic_two_dimension_vectors()
+{
+  vector<vector<int>> grid(3, vector<int>(4, 5));
+  print_vector(grid);
+}
+
 /**
  * @brief Entry point of the program.
  *
@@ -251,10 +262,12 @@ void basic_vector_resize() {
  *
  * @return int Returns 0 upon successful execution.
  */
-int main() {
+int main()
+{
   basic_vector_init();
   basic_vector_resize();
   basic_vector_creation();
+  basic_two_dimension_vectors();
 
   // Wait for user to press ENTER
   system("pause");
