@@ -247,6 +247,12 @@ void basic_vector_resize()
   cout << "Capacity: " << numbers.capacity() << '\n';
 }
 
+/**
+ * @brief Creates and prints a 2D vector with predefined values.
+ *
+ * This function initializes a 2D vector (3x4) with all elements set to 5
+ * and then prints the vector using the print_vector function.
+ */
 void basic_two_dimension_vectors()
 {
   vector<vector<int>> grid(3, vector<int>(4, 5));
