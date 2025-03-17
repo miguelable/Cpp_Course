@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/ORDENADOR 19/OneDrive - inBiot/Documentos/Visual Studio Code/Cpp_Course",
-      "program": "c:/Users/ORDENADOR 19/OneDrive - inBiot/Documentos/Visual Studio Code/Cpp_Course/build/Debug/outDebug.exe",
+      "cwd": ".",
+      "program": "build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
